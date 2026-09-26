@@ -1,0 +1,22 @@
+cat > .gitignore << 'EOF'
+data/raw/
+data/processed/
+data/blended/
+*.grib
+*.grib2
+*.grb2
+*.nc
+!tests/fixtures/*.nc
+!data/skill_scores/*.parquet
+!data/blended/demo_*.nc
+__pycache__/
+*.py[cod]
+.env
+*.egg-info/
+venv/
+.conda/
+dashboard/node_modules/
+dashboard/build/
+.DS_Store
+.idea/
+EOF
