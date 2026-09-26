@@ -1,0 +1,48 @@
+# =============================================================================
+# config/regions.yaml
+# India subregion definitions for the Hybrid AI-NWP Blending System
+# All coordinates in decimal degrees (WGS-84)
+# =============================================================================
+
+regions:
+  northwest:
+    name: "Northwest India"
+    lat_min: 22.0
+    lat_max: 35.0
+    lon_min: 68.0
+    lon_max: 78.0
+
+  central:
+    name: "Central India"
+    lat_min: 18.0
+    lat_max: 26.0
+    lon_min: 76.0
+    lon_max: 85.0
+
+  northeast:
+    name: "Northeast India"
+    lat_min: 22.0
+    lat_max: 30.0
+    lon_min: 85.0
+    lon_max: 97.0
+
+  peninsula:
+    name: "Peninsular India"
+    lat_min: 8.0
+    lat_max: 18.0
+    lon_min: 76.0
+    lon_max: 85.0
+
+  coastal:
+    name: "West Coastal India"
+    lat_min: 6.0
+    lat_max: 22.0
+    lon_min: 68.0
+    lon_max: 77.0
+
+  hills:
+    name: "Himalayan Foothills"
+    lat_min: 26.0
+    lat_max: 38.0
+    lon_min: 72.0
+    lon_max: 80.0

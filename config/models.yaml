@@ -1,0 +1,57 @@
+# =============================================================================
+# config/models.yaml
+# Model registry for the Hybrid AI-NWP Blending System (SIH 26081 | NCMRWF)
+# =============================================================================
+
+models:
+  gfs:
+    name: "Global Forecast System"
+    type: "nwp"
+    source: "nomads"
+    color: "#3b82f6"
+    variables:
+      - t2m
+      - tp
+      - u10
+      - v10
+      - mslp
+    enabled: true
+
+  ecmwf:
+    name: "ECMWF Open Data"
+    type: "nwp"
+    source: "opendata"
+    color: "#10b981"
+    variables:
+      - t2m
+      - tp
+      - u10
+      - v10
+      - mslp
+    enabled: true
+
+  pangu:
+    name: "Pangu-Weather"
+    type: "ai"
+    source: "demo"
+    color: "#f59e0b"
+    variables:
+      - t2m
+      - tp
+      - u10
+      - v10
+      - mslp
+    enabled: true
+
+  graphcast:
+    name: "GraphCast"
+    type: "ai"
+    source: "demo"
+    color: "#8b5cf6"
+    variables:
+      - t2m
+      - tp
+      - u10
+      - v10
+      - mslp
+    enabled: true

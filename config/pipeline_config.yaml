@@ -1,0 +1,22 @@
+# =============================================================================
+# config/pipeline_config.yaml
+# Pipeline path layout, scheduler settings, and API server configuration
+# for the Hybrid AI-NWP Blending System (SIH 26081 | NCMRWF)
+# =============================================================================
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  blended_data: "data/blended"
+  skill_scores: "data/skill"
+  logs: "logs"
+
+scheduler:
+  # Interval at which the ingestion + blending pipeline re-runs (hours)
+  interval_hours: 6
+  # Whether to trigger a pipeline run immediately at process startup
+  run_on_start: true
+
+api:
+  host: "0.0.0.0"
+  port: 8000
