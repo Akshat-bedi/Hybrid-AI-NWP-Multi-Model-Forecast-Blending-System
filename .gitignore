@@ -1,4 +1,4 @@
-cat > .gitignore << 'EOF'
+
 data/raw/
 data/processed/
 data/blended/
@@ -19,4 +19,6 @@ dashboard/node_modules/
 dashboard/build/
 .DS_Store
 .idea/
-EOF
+__pycache__/
+*.py[cod]
+.pytest_cache/
