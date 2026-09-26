@@ -1,0 +1,38 @@
+# =============================================================================
+# config/blend_config.yaml
+# Blending method, meteorological thresholds, and demo-model noise parameters
+# for the Hybrid AI-NWP Blending System (SIH 26081 | NCMRWF)
+# =============================================================================
+
+blending_method: "inverse_rmse"
+
+thresholds:
+  # IMD heavy-rain threshold (mm/day)
+  heavy_rain_mmday: 64.5
+  # WMO heatwave threshold (°C)
+  heatwave_celsius: 40.0
+  # Beaufort scale 8 / gale-warning threshold (m/s)
+  high_wind_ms: 17.2
+
+# Per-model synthetic noise parameters used by scripts/generate_demo_data.py.
+# Lower noise_std → better skill (pangu best, graphcast worst by design).
+demo_models:
+  gfs:
+    noise_std: 1.5
+    bias_t2m: 0.5       # warm bias (K)
+    bias_tp: 0.1        # wet bias (mm/hr)
+
+  ecmwf:
+    noise_std: 1.2
+    bias_t2m: -0.3      # slight cold bias (K)
+    bias_tp: -0.05      # slight dry bias (mm/hr)
+
+  pangu:
+    noise_std: 0.9      # lowest noise → lowest RMSE (best model)
+    bias_t2m: 0.1
+    bias_tp: 0.02
+
+  graphcast:
+    noise_std: 2.5      # highest noise → highest RMSE (worst model)
+    bias_t2m: 1.0
+    bias_tp: 0.2
