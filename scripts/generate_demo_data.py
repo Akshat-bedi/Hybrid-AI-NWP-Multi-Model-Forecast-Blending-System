@@ -352,14 +352,13 @@ def generate(start: date, end: date) -> None:
             file_count += 1
 
     # ------------------------------------------------------------------
-    # Summary (single print allowed by spec; logging mirrors it)
+    # Summary — logged only (project rule: never use print())
     # ------------------------------------------------------------------
     summary = (
         f"Generated {total_days} days × 4 models = {file_count} files "
         f"(+ {total_days} truth files) in {raw_root}"
     )
     logger.info(summary)
-    print(summary)  # noqa: T201 — spec explicitly requires this summary print
 
 
 # ---------------------------------------------------------------------------
