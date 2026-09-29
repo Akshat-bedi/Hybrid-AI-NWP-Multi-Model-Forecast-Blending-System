@@ -1,0 +1,129 @@
+:root {
+  --primary-glow: #38bdf8;
+  --green: #4ade80;
+  --amber: #fbbf24;
+  --red: #f87171;
+  --purple: #a78bfa;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #050a14;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.mono {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Glass panel style */
+.glass-panel {
+  background: rgba(10, 20, 40, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 179, 237, 0.15);
+  border-radius: 16px;
+}
+
+/* Animations */
+@keyframes pulse-ring {
+  0%   { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Alert markers on map */
+.alert-marker {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.alert-marker .ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+.alert-marker .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: currentColor;
+  border: 2px solid white;
+}
+
+.alert-marker.severity-2 { color: var(--red); }
+.alert-marker.severity-1 { color: var(--amber); }
+
+/* Custom slider */
+input[type=range].custom-slider {
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  height: 4px;
+  width: 100%;
+  outline: none;
+}
+
+input[type=range].custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary-glow);
+  box-shadow: 0 0 8px var(--primary-glow);
+  cursor: pointer;
+}
+
+input[type=range].custom-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary-glow);
+  box-shadow: 0 0 8px var(--primary-glow);
+  cursor: pointer;
+  border: none;
+}
+
+/* Scrollbar for alerts panel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Leaflet resets */
+.leaflet-container {
+  background: #050a14;
+}
