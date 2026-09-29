@@ -116,10 +116,10 @@ class TestConfigLayer:
             cfg = load_config(str(PROJECT_ROOT / "config" / name))
             assert isinstance(cfg, dict), f"load_config returned non-dict for {name}"
 
-    def test_models_yaml_has_four_entries(self) -> None:
-        """models.yaml must register exactly 4 models."""
+    def test_models_yaml_has_five_entries(self) -> None:
+        """models.yaml must register exactly 5 models."""
         cfg = load_config(str(PROJECT_ROOT / "config" / "models.yaml"))
-        assert len(cfg["models"]) == 4
+        assert len(cfg["models"]) == 5
 
     def test_regions_yaml_has_six_entries(self) -> None:
         """regions.yaml must define exactly 6 subregions."""

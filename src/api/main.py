@@ -28,7 +28,7 @@ app = FastAPI(
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "https://*.vercel.app"],
+    allow_origins=["http://localhost:3000", "http://localhost:5173", "https://*.vercel.app"],
     allow_credentials=True,
     allow_methods=["GET"],
     allow_headers=["*"],
@@ -40,8 +40,8 @@ app.include_router(weights.router, prefix="/api/v1")
 app.include_router(skill.router, prefix="/api/v1")
 app.include_router(alerts.router, prefix="/api/v1")
 
-
 @app.get("/health", response_model=HealthResponse, tags=["System"])
+@app.get("/api/v1/health", response_model=HealthResponse, tags=["System"])
 def get_health():
     """Healthcheck endpoint retrieving system state without computation."""
     try:

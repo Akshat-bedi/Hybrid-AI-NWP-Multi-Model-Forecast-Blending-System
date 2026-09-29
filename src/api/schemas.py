@@ -43,6 +43,7 @@ class WeightEntry(BaseModel):
     weight: float
     rmse: float
     color: str
+    skill_source: str = "live"
 
 
 class WeightMapResponse(BaseModel):
@@ -63,6 +64,7 @@ class SkillRow(BaseModel):
     mae: float
     bias: float
     ets: float
+    skill_source: str = "live"
 
 
 class AlertItem(BaseModel):

@@ -62,7 +62,8 @@ def get_weights(variable: str, lead_hours: int = 24, season: str = "JJA"):
                 model_name=model_name,
                 weight=float(row.get("weight", 0.0)),
                 rmse=float(row.get("rmse", 0.0)),
-                color=color
+                color=color,
+                skill_source=row.get("skill_source", "live")
             ))
         regions_dict[str(region_name)] = entries
         

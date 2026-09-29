@@ -55,3 +55,11 @@ models:
       - v10
       - mslp
     enabled: true
+
+  open_meteo:
+    name: Open-Meteo
+    type: nwp
+    source: open_meteo
+    color: "#f43f5e"
+    enabled: true
+    variables: [t2m, tp, u10, v10, mslp]

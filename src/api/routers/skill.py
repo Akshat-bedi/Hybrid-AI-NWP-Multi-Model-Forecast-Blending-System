@@ -56,7 +56,8 @@ def get_skill_scores(variable: str = "t2m", lead_hours: int = 72):
             rmse=float(row.get("rmse", 0.0)),
             mae=float(row.get("mae", 0.0)),
             bias=float(row.get("bias", 0.0)),
-            ets=ets_val
+            ets=ets_val,
+            skill_source=row.get("skill_source", "live")
         ))
         
     return results
